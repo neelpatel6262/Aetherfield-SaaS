@@ -25,7 +25,7 @@ In early 2025, I wanted to break out of tutorial hell and prove I could build pr
 I went to Figma Community, searched "SaaS", scrolled randomly, and landed on this design:
 
 **Modern & Clean SaaS Company Website**
-→ [Figma Community File](https://www.figma.com/community/file/1279784479680263543/modern-clean-saas-company-website)
+→ [Figma Community File](https://www.figma.com/community/file/1573023525218599861)
 
 **Why this one?**
 
@@ -226,16 +226,15 @@ MIT License — free to use, modify, and distribute.
 ## Contact
 
 **Neel**
-📍 Parbhani, Maharashtra, India
-🐙 [GitHub](https://github.com/your-username)
-✉️ your@email.com
-💼 [LinkedIn](https://linkedin.com/in/your-profile)
+🐙 [GitHub](https://github.com/neelpatel6262)
+✉️ patelneel392003@gmail.com
+💼 [LinkedIn](https://www.linkedin.com/in/uxui-designer-devloper/)
 
 ---
 
 ## Acknowledgments
 
-- [Figma Community](https://www.figma.com/community/file/1279784479680263543/modern-clean-saas-company-website) — random SaaS inspiration
+- [Figma Community](https://www.figma.com/community/file/1573023525218599861) — random SaaS inspiration
 - [Motion.dev](https://motion.dev) — best scroll animation library
 - [Tailwind CSS](https://tailwindcss.com) — fastest styling workflow
 - [Vite](https://vitejs.dev) — lightning-fast dev experience
