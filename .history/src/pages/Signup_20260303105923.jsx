@@ -11,7 +11,7 @@ import {
   CircleCheck,
 } from 'lucide-react';
 
-const SignUp = () => {
+const Signup = () => {
   const [step, setStep] = useState(1);
   const [form, setForm] = useState({
     firstName: '',
@@ -399,4 +399,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Signup;
