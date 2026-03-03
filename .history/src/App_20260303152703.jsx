@@ -59,6 +59,7 @@ const App = () => {
       <ScrollToTop />
       <Routes>
 
+        {/* WITH Navbar + Footer */}
         <Route element={<Layout />}>
           <Route path="/"               element={<Home />} />
           <Route path="/about"          element={<About />} />
@@ -69,6 +70,7 @@ const App = () => {
           <Route path="/signup"         element={<SignUp />} />
         </Route>
 
+        {/* WITHOUT Navbar + Footer */}
         <Route path="/product" element={<NotFound />} />
         <Route path="*"        element={<NotFound />} />
 

@@ -3,10 +3,10 @@ import { motion } from 'motion/react';
 import FeatureImage from '../../assets/images/Feature.jpg';
 
 const features = [
-  { number: '001', title: 'Track',  desc: 'Emissions, energy, and waste across your value chain' },
-  { number: '002', title: 'Model',  desc: 'Forecast performance and goal alignment' },
+  { number: '001', title: 'Track', desc: 'Emissions, energy, and waste across your value chain' },
+  { number: '002', title: 'Model', desc: 'Forecast performance and goal alignment' },
   { number: '003', title: 'Report', desc: 'Generate ESG disclosures, automate frameworks' },
-  { number: '004', title: 'Act',    desc: 'Surface insights and operational next steps' },
+  { number: '004', title: 'Act', desc: 'Surface insights and operational next steps' },
 ];
 
 const Features = () => {
@@ -15,7 +15,9 @@ const Features = () => {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.12 },
+      transition: {
+        staggerChildren: 0.12,
+      },
     },
   };
 
@@ -33,11 +35,9 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="font-extrabold text-center text-black leading-tight mb-16 font-[subheading]"
-          style={{ fontSize: 'clamp(24px, 4vw, 40px)' }}   
+          className="text-[40px] font-extrabold text-center text-black leading-snug mb-16 font-[subheading] leading-tight"
         >
-          Everything you need to measure,{' '}
-          <br className="hidden md:block" />
+          Everything you need to measure,<br />
           model, and act on sustainability
         </motion.h2>
 
@@ -54,10 +54,10 @@ const Features = () => {
             <img
               src={FeatureImage}
               alt="Feature"
+              className="w-full h-full object-cover rounded-2xl"
+              style={{ minHeight: '420px', maxHeight: '520px' }}
               loading="lazy"
               decoding="async"
-              className="w-full object-cover rounded-2xl"
-              style={{ height: 'clamp(260px, 40vw, 520px)' }}   
             />
           </motion.div>
 
@@ -81,6 +81,7 @@ const Features = () => {
                 <p className="text-[16px] text-gray-600 ml-8 mt-1 font-[btn]">{f.number}</p>
               </motion.div>
             ))}
+
 
             <motion.button
               initial={{ opacity: 0 }}

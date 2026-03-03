@@ -21,8 +21,8 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-          className="font-extrabold text-center text-black leading-tight tracking-tight font-[subheading]"
-          style={{ fontSize: 'clamp(36px, 8vw, 80px)' }}   
+          className="font-extrabold text-center text-black leading-tight tracking-tight font-[heading]"
+          style={{ fontSize: 'clamp(36px, 8vw, 80px)' }}   // ✅ fluid — no overflow on mobile
         >
           Sustainability insights,
         </motion.h1>
@@ -31,8 +31,8 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
-          className="font-extrabold text-center text-black leading-tight tracking-tight font-[btn]"
-          style={{ fontSize: 'clamp(36px, 8vw, 80px)' }}   
+          className="font-extrabold text-center text-black leading-tight tracking-tight font-[heading]"
+          style={{ fontSize: 'clamp(36px, 8vw, 80px)' }}   // ✅ fluid
         >
           built for business
         </motion.h1>
@@ -51,7 +51,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
-        className="flex flex-col sm:flex-row gap-3 mt-8 w-full max-w-sm sm:max-w-none sm:w-auto"  
+        className="flex flex-col sm:flex-row gap-3 mt-8 w-full max-w-sm sm:max-w-none sm:w-auto"  // ✅ stack on mobile, row on sm+
       >
         <motion.button
           whileHover={{ scale: 1.03 }}

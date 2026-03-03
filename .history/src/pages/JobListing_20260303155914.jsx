@@ -148,6 +148,21 @@ const JobListing = () => {
 
         </motion.div>
 
+   
+        <div className="text-center mt-14 mb-8">
+          <h2
+            className="font-extrabold text-black leading-tight font-[heading] mb-8 mx-auto"
+            style={{ fontSize: 'clamp(22px, 4vw, 36px)', maxWidth: '420px' }}
+          >
+            Ready to help build the future of climate intelligence?
+          </h2>
+          <button
+            className="bg-black text-white px-7 py-3 rounded-md hover:opacity-75 transition text-[13px] md:text-[14px] font-semibold"
+            style={{ fontFamily: 'btn, monospace' }}
+          >
+            • Apply now
+          </button>
+        </div>
 
       </div>
     </div>

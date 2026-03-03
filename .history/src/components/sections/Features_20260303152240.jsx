@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'motion/react';   
 import FeatureImage from '../../assets/images/Feature.jpg';
 
 const features = [
@@ -15,7 +15,9 @@ const Features = () => {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.12 },
+      transition: {
+        staggerChildren: 0.12,
+      },
     },
   };
 
@@ -33,11 +35,9 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="font-extrabold text-center text-black leading-tight mb-16 font-[subheading]"
-          style={{ fontSize: 'clamp(24px, 4vw, 40px)' }}   
+          className="text-[40px] font-extrabold text-center text-black leading-snug mb-16 font-[subheading] leading-tight"
         >
-          Everything you need to measure,{' '}
-          <br className="hidden md:block" />
+          Everything you need to measure,<br />
           model, and act on sustainability
         </motion.h2>
 
@@ -54,10 +54,8 @@ const Features = () => {
             <img
               src={FeatureImage}
               alt="Feature"
-              loading="lazy"
-              decoding="async"
-              className="w-full object-cover rounded-2xl"
-              style={{ height: 'clamp(260px, 40vw, 520px)' }}   
+              className="w-full h-full object-cover rounded-2xl"
+              style={{ minHeight: '420px', maxHeight: '520px' }}
             />
           </motion.div>
 
@@ -82,6 +80,7 @@ const Features = () => {
               </motion.div>
             ))}
 
+        
             <motion.button
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

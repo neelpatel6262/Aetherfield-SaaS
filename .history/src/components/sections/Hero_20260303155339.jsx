@@ -31,7 +31,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
-          className="font-extrabold text-center text-black leading-tight tracking-tight font-[btn]"
+          className="font-extrabold text-center text-black leading-tight tracking-tight font-[heading]"
           style={{ fontSize: 'clamp(36px, 8vw, 80px)' }}   
         >
           built for business
