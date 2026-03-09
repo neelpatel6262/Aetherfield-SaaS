@@ -10,64 +10,6 @@ import {
   CircleCheck,
 } from 'lucide-react';
 
-
-const PasswordInput = ({ label, name, value, onChange, show, onToggle, placeholder, error, strength, form }) => (
-  <div className="flex flex-col gap-1">
-    <label htmlFor={name} className="text-xs text-gray-700 font-medium tracking-wide uppercase mb-1.5">
-      {label}
-    </label>
-    <div className="relative">
-      <input
-        id={name}
-        type={show ? 'text' : 'password'}
-        name={name}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        className={`w-full px-4 py-3 text-sm border rounded-lg outline-none transition-all pr-11
-          ${error ? 'border-red-400 bg-red-50 focus:ring-red-200' : 'border-gray-300 focus:border-black focus:ring-2 focus:ring-black/10'}`}
-      />
-      <button
-        type="button"
-        onClick={onToggle}
-        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-black transition p-1"
-        aria-label={show ? 'Hide password' : 'Show password'}
-      >
-        {show ? <EyeOff size={18} /> : <Eye size={18} />}
-      </button>
-    </div>
-
-    {name === 'password' && value && (
-      <div className="mt-2">
-        <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
-          <div className={`h-full transition-all duration-300 ${strength.color} ${strength.width}`} />
-        </div>
-        <p className="mt-1.5 text-xs text-gray-600">
-          Password strength: <span className="font-medium text-black">{strength.label}</span>
-        </p>
-      </div>
-    )}
-
-    {name === 'confirmPassword' && value && (
-      <div className="mt-2 flex items-center gap-1.5 text-xs">
-        {form.password === value ? (
-          <>
-            <Check size={14} className="text-green-600" />
-            <span className="text-green-600 font-medium">Passwords match</span>
-          </>
-        ) : (
-          <>
-            <X size={14} className="text-red-600" />
-            <span className="text-red-600">Passwords do not match</span>
-          </>
-        )}
-      </div>
-    )}
-
-    {error && <p className="mt-1.5 text-xs text-red-600">{error}</p>}
-  </div>
-);
-
 const SignUp = () => {
   const [step, setStep] = useState(1);
   const [form, setForm] = useState({
@@ -145,6 +87,7 @@ const SignUp = () => {
       };
 
       localStorage.setItem('user', JSON.stringify(userData));
+
       console.log('User registered & saved to localStorage:', userData);
 
       setStep(2);
@@ -157,7 +100,7 @@ const SignUp = () => {
   };
 
   const getPasswordStrength = (password) => {
-    if (!password) return null;
+    if (!password) return { label: '', color: 'bg-gray-300', width: 'w-0' };
 
     let strength = 0;
     if (password.length >= 8) strength++;
@@ -172,6 +115,63 @@ const SignUp = () => {
   };
 
   const strength = getPasswordStrength(form.password);
+
+  const PasswordInput = ({ label, name, value, onChange, show, onToggle, placeholder, error }) => (
+    <div className="flex flex-col gap-1">
+      <label htmlFor={name} className="text-xs text-gray-700 font-medium tracking-wide uppercase mb-1.5">
+        {label}
+      </label>
+      <div className="relative">
+        <input
+          id={name}
+          type={show ? 'text' : 'password'}
+          name={name}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          className={`w-full px-4 py-3 text-sm border rounded-lg outline-none transition-all pr-11
+            ${error ? 'border-red-400 bg-red-50 focus:ring-red-200' : 'border-gray-300 focus:border-black focus:ring-2 focus:ring-black/10'}`}
+        />
+        <button
+          type="button"
+          onClick={onToggle}
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-black transition p-1"
+          aria-label={show ? 'Hide password' : 'Show password'}
+        >
+          {show ? <EyeOff size={18} /> : <Eye size={18} />}
+        </button>
+      </div>
+
+      {name === 'password' && (
+        <div className={`mt-2 transition-opacity duration-200 ${!value ? 'opacity-0 h-0' : 'opacity-100'}`}>
+          <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
+            <div className={`h-full transition-all duration-300 ${strength.color} ${strength.width}`} />
+          </div>
+          <p className="mt-1.5 text-xs text-gray-600">
+            Password strength: <span className="font-medium text-black">{strength.label}</span>
+          </p>
+        </div>
+      )}
+
+      {name === 'confirmPassword' && value && (
+        <div className="mt-2 flex items-center gap-1.5 text-xs">
+          {form.password === value ? (
+            <>
+              <Check size={14} className="text-green-600" />
+              <span className="text-green-600 font-medium">Passwords match</span>
+            </>
+          ) : (
+            <>
+              <X size={14} className="text-red-600" />
+              <span className="text-red-600">Passwords do not match</span>
+            </>
+          )}
+        </div>
+      )}
+
+      {error && <p className="mt-1.5 text-xs text-red-600">{error}</p>}
+    </div>
+  );
 
   if (step === 2) {
     return (
@@ -190,7 +190,7 @@ const SignUp = () => {
           </div>
 
           <p className="text-sm text-gray-500 max-w-xs">
-            Click the link in your email to activate your account. Don't forget to check your spam folder.
+            Click the link in your email to activate your account. Don’t forget to check your spam folder.
           </p>
 
           <div className="border-t border-gray-100 pt-6 w-full flex flex-col gap-3 text-sm text-gray-500">
@@ -292,7 +292,6 @@ const SignUp = () => {
             {errors.company && <p className="mt-1.5 text-xs text-red-600">{errors.company}</p>}
           </div>
 
-          {/* ✅ Now passing strength and form as props */}
           <PasswordInput
             label="Password"
             name="password"
@@ -302,8 +301,6 @@ const SignUp = () => {
             onToggle={() => setShowPassword(!showPassword)}
             placeholder="Minimum 8 characters"
             error={errors.password}
-            strength={strength}
-            form={form}
           />
 
           <PasswordInput
@@ -315,8 +312,6 @@ const SignUp = () => {
             onToggle={() => setShowConfirm(!showConfirm)}
             placeholder="Repeat your password"
             error={errors.confirmPassword}
-            strength={strength}
-            form={form}
           />
 
           <div className="flex items-start gap-3 mt-2">
@@ -361,17 +356,17 @@ const SignUp = () => {
         <div />
 
         <div className="space-y-8">
-          <p className="text-6xl font-extrabold text-black leading-tight font-[Heading]">
+          <p className="text-6xl font-extrabold text-black leading-tight">
             Sustainability insights,
             <br />
             built for business.
           </p>
-          <p className="text-2xl text-black/70 max-w-md leading-relaxed font-[Subheading]">
+          <p className="text-2xl text-black/70 max-w-md leading-relaxed">
             Join hundreds of forward-thinking teams using Aetherfield to track emissions, model outcomes, and report with confidence.
           </p>
         </div>
 
-        <div className="flex gap-12 font-[Btn] text-black/60">
+        <div className="flex gap-12 text-black/60">
           {[
             { number: '500+', label: 'Companies onboarded' },
             { number: '34%', label: 'Avg. reporting time saved' },

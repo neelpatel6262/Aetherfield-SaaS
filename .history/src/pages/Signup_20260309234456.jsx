@@ -10,7 +10,7 @@ import {
   CircleCheck,
 } from 'lucide-react';
 
-
+// ✅ Moved OUTSIDE SignUp — prevents unmount/remount on every keystroke
 const PasswordInput = ({ label, name, value, onChange, show, onToggle, placeholder, error, strength, form }) => (
   <div className="flex flex-col gap-1">
     <label htmlFor={name} className="text-xs text-gray-700 font-medium tracking-wide uppercase mb-1.5">
