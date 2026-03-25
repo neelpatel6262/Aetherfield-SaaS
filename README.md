@@ -10,7 +10,19 @@
 
 **Live Demo:** [aetherfield.vercel.app](https://aetherfield-saa-s-hafm.vercel.app/)
 
+---
+
+## 🖥️ Live Preview
+
 ![Aetherfield Preview](https://github.com/neelpatel6262/Aetherfield-SaaS/blob/5f0be6a29158a8ce6b915a75ddae1c9e21b38ac8/Aetherfield%20SaaS.jpg)
+
+---
+
+## 🎨 Figma Design Reference
+
+> All pages designed in Figma before a single line of code was written — Home, /journal, /about, /careers, and more.
+
+![Aetherfield Figma Design](https://raw.githubusercontent.com/neelpatel6262/Aetherfield-SaaS/main/Screenshot%202026-03-25%20173510.png)
 
 ---
 
@@ -168,16 +180,17 @@ src/
 ## 10. Development Process
 
 1. Picked a random SaaS template from Figma Community as the visual reference only.
-2. Set up Vite + React + Tailwind project from scratch.
-3. Built the `Layout` wrapper — Navbar + `<Outlet>` + Footer.
-4. Implemented routing early — nested layouts, dynamic params, and 404 page.
-5. Created the `useScrollAnimation` custom hook for reusable scroll-triggered animations.
-6. Built all marketing sections one by one — Hero through CTABanner.
-7. Added dynamic routes and local data files for journal articles and job listings.
-8. Designed and debugged the multi-step signup form UX (validation, password meter, step 2).
-9. Polished the mobile menu — hamburger toggle animation + full-screen overlay.
-10. Refactored for typography consistency, spacing uniformity, and component cleanup.
-11. Deployed to Vercel and wrote project documentation.
+2. **Designed all pages in Figma first** — Home, /journal, /about, /careers, and more — before writing any code. *(See Figma Design Reference above.)*
+3. Set up Vite + React + Tailwind project from scratch.
+4. Built the `Layout` wrapper — Navbar + `<Outlet>` + Footer.
+5. Implemented routing early — nested layouts, dynamic params, and 404 page.
+6. Created the `useScrollAnimation` custom hook for reusable scroll-triggered animations.
+7. Built all marketing sections one by one — Hero through CTABanner.
+8. Added dynamic routes and local data files for journal articles and job listings.
+9. Designed and debugged the multi-step signup form UX (validation, password meter, step 2).
+10. Polished the mobile menu — hamburger toggle animation + full-screen overlay.
+11. Refactored for typography consistency, spacing uniformity, and component cleanup.
+12. Deployed to Vercel and wrote project documentation.
 
 ---
 
@@ -203,7 +216,7 @@ src/
 | Routing       | Basic flat routes only              | Nested layouts, dynamic params, 404        |
 | Animations    | Manual props everywhere             | Reusable hook system                       |
 | Mobile UX     | Basic toggle                        | Full-screen overlay with staggered links   |
-| Typography    | Inconsistent sizing                 | Consistent scale across all sections      |
+| Typography    | Inconsistent sizing                 | Consistent scale across all sections       |
 | Architecture  | Random file structure               | Scalable, organized, predictable           |
 
 > This project was the turning point from "learning React" to "building real products."
@@ -296,6 +309,7 @@ This project is open source under the [MIT License](https://opensource.org/licen
 ## 20. Checklist
 
 - [x] Vite + React 18 + Tailwind CSS 3.4 project setup
+- [x] Figma design completed for all pages before development
 - [x] Responsive Navbar with full-screen mobile overlay
 - [x] Custom `useScrollAnimation` hook
 - [x] All marketing sections (Hero → CTABanner)
